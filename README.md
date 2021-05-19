@@ -25,3 +25,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 Авторизация и использование товаров с помощью самописного Node.js
 либо с помощью Firebase (что тоже было бы неплохо)
+https://github.com/utimur/online-store-full-course - образец
