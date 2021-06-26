@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  nuxt:
+    build: ./app/
+    restart: always
+    ports:
+      - "3000:3000"
+    command:
+      "npm run start"
+
+  nginx:
+    image: nginx:1.19
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - nuxt
+  json-server:
+    image: vimagick/json-server
+    command: -H 0.0.0.0 -p 5000 -w db.json
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/data
+    restart: always
+    
