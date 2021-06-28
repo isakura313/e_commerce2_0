@@ -1,6 +1,4 @@
-FROM node:10
-
-# RUN apt-get update
+FROM node:lts-alpine
 
 ENV APP_ROOT /src
 
